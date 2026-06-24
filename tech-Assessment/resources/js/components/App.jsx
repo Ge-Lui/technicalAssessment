@@ -81,16 +81,12 @@ export default function App() {
     };
 
     return (
-        <div className="min-h-screen bg-white text-slate-800 flex flex-col items-center justify-center p-6 sm:p-12 relative overflow-hidden font-sans">
-            {/* Background elements using Cebu Landmasters Brand Colors */}
-            <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
-
+        <div className="min-h-screen bg-[#0D1F14] text-white flex flex-col items-center justify-center p-6 sm:p-12 relative overflow-hidden font-sans">
             <div className="w-full max-w-2xl z-10 space-y-8">
                 {/* Form Card */}
-                <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-xl transition-all duration-300 hover:border-slate-300/80">
-                    <h2 className="text-xl font-bold mb-6 text-slate-800 flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="bg-[#112A1F] border border-[rgba(34,139,74,0.25)] rounded-2xl p-6 sm:p-8 shadow-2xl transition-all duration-300">
+                    <h2 className="text-xl font-bold mb-6 text-[#FFFFFF] flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#228B4A] animate-pulse" />
                         Submit Name Entry
                     </h2>
 
@@ -98,7 +94,7 @@ export default function App() {
                         {/* Name Fields Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div className="space-y-2">
-                                <label htmlFor="firstName" className="block text-xs font-semibold uppercase tracking-wider text-slate-500">
+                                <label htmlFor="firstName" className="block text-[11px] font-bold uppercase tracking-wider text-[#7DB89A]">
                                     First Name
                                 </label>
                                 <input
@@ -108,12 +104,12 @@ export default function App() {
                                     value={firstName}
                                     onChange={(e) => setFirstName(e.target.value)}
                                     disabled={isSubmitting}
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all duration-200 focus:bg-white"
+                                    className="w-full bg-[#0D2318] border border-[#1E5C35] rounded-[9px] px-4 py-3 text-[#FFFFFF] placeholder-[#3D7A55] focus:outline-none focus:ring-2 focus:ring-[#228B4A]/50 focus:border-[#228B4A] transition-all duration-200 text-sm"
                                 />
                             </div>
 
                             <div className="space-y-2">
-                                <label htmlFor="lastName" className="block text-xs font-semibold uppercase tracking-wider text-slate-500">
+                                <label htmlFor="lastName" className="block text-[11px] font-bold uppercase tracking-wider text-[#7DB89A]">
                                     Last Name
                                 </label>
                                 <input
@@ -123,7 +119,7 @@ export default function App() {
                                     value={lastName}
                                     onChange={(e) => setLastName(e.target.value)}
                                     disabled={isSubmitting}
-                                    className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all duration-200 focus:bg-white"
+                                    className="w-full bg-[#0D2318] border border-[#1E5C35] rounded-[9px] px-4 py-3 text-[#FFFFFF] placeholder-[#3D7A55] focus:outline-none focus:ring-2 focus:ring-[#228B4A]/50 focus:border-[#228B4A] transition-all duration-200 text-sm"
                                 />
                             </div>
                         </div>
@@ -136,7 +132,7 @@ export default function App() {
                         )}
 
                         {successMsg && (
-                            <div className="bg-teal-500/10 border border-teal-500/30 text-teal-400 rounded-lg px-4 py-3 text-sm flex items-center gap-2 animate-fadeIn">
+                            <div className="bg-[#228B4A]/10 border border-[#228B4A]/30 text-[#7DB89A] rounded-lg px-4 py-3 text-sm flex items-center gap-2 animate-fadeIn">
                                 <span>✅</span> {successMsg}
                             </div>
                         )}
@@ -146,7 +142,7 @@ export default function App() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-500 hover:to-blue-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-emerald-500/20 active:scale-98 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                className="w-full sm:w-auto bg-[#228B4A] hover:bg-[#1A6B39] text-[#FFFFFF] font-bold px-6 py-3 rounded-[9px] shadow-lg active:scale-98 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
                                 {isSubmitting ? (
                                     <>
@@ -165,16 +161,16 @@ export default function App() {
                 </div>
 
                 {/* Table List Card */}
-                <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-xl transition-all duration-300">
+                <div className="bg-[#112A1F] border border-[rgba(34,139,74,0.25)] rounded-2xl p-6 sm:p-8 shadow-2xl transition-all duration-300">
                     <div className="flex items-center justify-between mb-6">
-                        <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                        <h2 className="text-xl font-bold text-[#FFFFFF] flex items-center gap-2">
+                            <span className="w-2.5 h-2.5 rounded-full bg-[#228B4A]" />
                             Submitted Name Entries
                         </h2>
                         <button
                             onClick={fetchEntries}
                             disabled={isLoading}
-                            className="p-2 text-slate-500 hover:text-emerald-600 transition-colors duration-200"
+                            className="p-2 text-[#228B4A] hover:text-[#1A6B39] transition-colors duration-200"
                             title="Refresh List"
                         >
                             <svg className={`h-5 w-5 ${isLoading ? 'animate-spin' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -184,10 +180,10 @@ export default function App() {
                     </div>
 
                     {/* Table View */}
-                    <div className="overflow-hidden border border-slate-200 rounded-xl bg-white">
+                    <div className="overflow-hidden border border-[#1E5C35] rounded-xl bg-[#0D2318]">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="border-b border-slate-200 bg-slate-50 text-slate-500 text-xs font-bold uppercase tracking-wider">
+                                <tr className="border-b border-[#1E5C35] bg-[#0D2318] text-[#7DB89A] text-[11px] font-bold uppercase tracking-wider">
                                     <th className="px-6 py-4">First Name</th>
                                     <th className="px-6 py-4">Last Name</th>
                                     <th className="px-6 py-4 hidden sm:table-cell text-right">Submitted At</th>
@@ -196,9 +192,9 @@ export default function App() {
                             <tbody>
                                 {isLoading && entries.length === 0 ? (
                                     <tr>
-                                        <td colSpan="3" className="px-6 py-12 text-center text-slate-500">
+                                        <td colSpan="3" className="px-6 py-12 text-center text-[#7DB89A]">
                                             <div className="flex flex-col items-center gap-3">
-                                                <svg className="animate-spin h-8 w-8 text-emerald-500" fill="none" viewBox="0 0 24 24">
+                                                <svg className="animate-spin h-8 w-8 text-[#228B4A]" fill="none" viewBox="0 0 24 24">
                                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                                                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                                                 </svg>
@@ -208,7 +204,7 @@ export default function App() {
                                     </tr>
                                 ) : entries.length === 0 ? (
                                     <tr>
-                                        <td colSpan="3" className="px-6 py-12 text-center text-slate-500 text-sm">
+                                        <td colSpan="3" className="px-6 py-12 text-center text-[#7DB89A] text-sm">
                                             No name entries found. Submit a name using the form above!
                                         </td>
                                     </tr>
@@ -216,11 +212,11 @@ export default function App() {
                                     entries.map((entry) => (
                                         <tr
                                             key={entry.id}
-                                            className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors duration-150 text-slate-600 text-sm"
+                                            className="border-b border-[#1A3D28] hover:bg-[#153426]/50 bg-[#112A1F] transition-colors duration-150 text-sm"
                                         >
-                                            <td className="px-6 py-4 font-medium text-slate-800">{entry.first_name}</td>
-                                            <td className="px-6 py-4">{entry.last_name}</td>
-                                            <td className="px-6 py-4 hidden sm:table-cell text-right text-slate-400 text-xs">
+                                            <td className="px-6 py-4 font-bold text-[#FFFFFF]">{entry.first_name}</td>
+                                            <td className="px-6 py-4 text-[#C8E6D4]">{entry.last_name}</td>
+                                            <td className="px-6 py-4 hidden sm:table-cell text-right text-[#7DB89A] text-xs">
                                                 {new Date(entry.created_at).toLocaleString(undefined, {
                                                     dateStyle: 'medium',
                                                     timeStyle: 'short',
