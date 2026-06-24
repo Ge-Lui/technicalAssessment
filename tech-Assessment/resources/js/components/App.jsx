@@ -86,11 +86,11 @@ export default function App() {
             <div className="absolute top-0 left-0 right-0 h-2 bg-[#4b8b2e]" />
 
             {/* Top Left Logo */}
-            <div className="absolute top-6 left-6 sm:top-8 sm:left-12 z-20">
+            <div className="absolute top-8 left-8 sm:top-10 sm:left-12 z-20">
                 <img 
                     src="/clm.png" 
                     alt="Logo" 
-                    className="h-8 sm:h-10 w-auto object-contain"
+                    className="h-14 sm:h-18 w-auto object-contain"
                 />
             </div>
 
