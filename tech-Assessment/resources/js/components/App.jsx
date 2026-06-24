@@ -85,6 +85,12 @@ export default function App() {
             {/* Top decorative green bar mimicking CLI website header */}
             <div className="absolute top-0 left-0 right-0 h-2 bg-[#4b8b2e]" />
 
+            {/* Background watermark */}
+            <div 
+                className="absolute inset-0 z-0 pointer-events-none opacity-[0.05] bg-no-repeat bg-center bg-contain m-8 sm:m-16"
+                style={{ backgroundImage: 'url("/cblm.png")' }}
+            />
+
             <div className="w-full max-w-2xl z-10 space-y-8">
                 {/* Form Card */}
                 <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md">
