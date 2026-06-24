@@ -81,13 +81,13 @@ export default function App() {
     };
 
     return (
-        <div className="min-h-screen bg-[#F8FAFC] text-slate-800 flex flex-col items-center justify-center p-6 sm:p-12 relative overflow-hidden font-sans">
+        <div className="min-h-screen bg-[#EBF2EE] text-slate-800 flex flex-col items-center justify-center p-6 sm:p-12 relative overflow-hidden font-sans">
             {/* Top decorative green bar mimicking CLI website header */}
             <div className="absolute top-0 left-0 right-0 h-2 bg-[#4b8b2e]" />
 
             <div className="w-full max-w-2xl z-10 space-y-8">
                 {/* Form Card */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md">
+                <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md">
                     <h2 className="text-xl font-bold mb-6 text-[#4b8b2e] flex items-center gap-2">
                         <span className="w-2.5 h-2.5 rounded-full bg-[#0069B4] animate-pulse" />
                         Submit Name Entry
@@ -107,7 +107,7 @@ export default function App() {
                                     value={firstName}
                                     onChange={(e) => setFirstName(e.target.value)}
                                     disabled={isSubmitting}
-                                    className="w-full bg-[#F8FAFC] border border-slate-200 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0069B4]/20 focus:border-[#0069B4] transition-all duration-200 text-sm focus:bg-white"
+                                    className="w-full bg-[#F4F8F6] border border-slate-200 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0069B4]/20 focus:border-[#0069B4] transition-all duration-200 text-sm focus:bg-white"
                                 />
                             </div>
 
@@ -122,7 +122,7 @@ export default function App() {
                                     value={lastName}
                                     onChange={(e) => setLastName(e.target.value)}
                                     disabled={isSubmitting}
-                                    className="w-full bg-[#F8FAFC] border border-slate-200 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0069B4]/20 focus:border-[#0069B4] transition-all duration-200 text-sm focus:bg-white"
+                                    className="w-full bg-[#F4F8F6] border border-slate-200 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0069B4]/20 focus:border-[#0069B4] transition-all duration-200 text-sm focus:bg-white"
                                 />
                             </div>
                         </div>
@@ -164,7 +164,7 @@ export default function App() {
                 </div>
 
                 {/* Table List Card */}
-                <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md">
+                <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md">
                     <div className="flex items-center justify-between mb-6">
                         <h2 className="text-xl font-bold text-[#4b8b2e] flex items-center gap-2">
                             <span className="w-2.5 h-2.5 rounded-full bg-[#0069B4]" />
@@ -183,10 +183,10 @@ export default function App() {
                     </div>
 
                     {/* Table View */}
-                    <div className="overflow-hidden border border-slate-100 rounded-xl bg-white">
+                    <div className="overflow-hidden border border-slate-200 rounded-xl bg-white">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="border-b border-slate-100 bg-[#F8FAFC] text-slate-500 text-xs font-bold uppercase tracking-wider">
+                                <tr className="border-b border-slate-200 bg-[#F0F5F2] text-slate-500 text-xs font-bold uppercase tracking-wider">
                                     <th className="px-6 py-4">First Name</th>
                                     <th className="px-6 py-4">Last Name</th>
                                     <th className="px-6 py-4 hidden sm:table-cell text-right">Submitted At</th>
@@ -215,7 +215,7 @@ export default function App() {
                                     entries.map((entry) => (
                                         <tr
                                             key={entry.id}
-                                            className="border-b border-slate-100 hover:bg-slate-50 transition-colors duration-150 text-sm text-slate-600"
+                                            className="border-b border-slate-100 hover:bg-[#EBF2EE]/50 transition-colors duration-150 text-sm text-slate-600"
                                         >
                                             <td className="px-6 py-4 font-semibold text-slate-800">{entry.first_name}</td>
                                             <td className="px-6 py-4">{entry.last_name}</td>
