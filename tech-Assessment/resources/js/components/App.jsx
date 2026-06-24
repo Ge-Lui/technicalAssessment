@@ -233,7 +233,7 @@ export default function App() {
                                             className="border-b border-slate-100 hover:bg-[#EBF2EE]/50 transition-colors duration-150 text-sm text-slate-600"
                                         >
                                             <td className="px-6 py-4 font-semibold text-slate-800">{entry.first_name}</td>
-                                            <td className="px-6 py-4">{entry.last_name}</td>
+                                            <td className="px-6 py-4 font-semibold text-slate-800">{entry.last_name}</td>
                                             <td className="px-6 py-4 hidden sm:table-cell text-right text-slate-400 text-xs">
                                                 {new Date(entry.created_at).toLocaleString(undefined, {
                                                     dateStyle: 'medium',
