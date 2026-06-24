@@ -87,16 +87,6 @@ export default function App() {
             <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />
 
             <div className="w-full max-w-2xl z-10 space-y-8">
-                {/* Header */}
-                <div className="text-center space-y-2">
-                    <h1 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-400 via-teal-400 to-blue-400 bg-clip-text text-transparent">
-                        Technical Assessment
-                    </h1>
-                    <p className="text-slate-400 text-sm sm:text-base font-medium">
-                        Laravel, React, PostgreSQL & GCP VM Deployment
-                    </p>
-                </div>
-
                 {/* Form Card */}
                 <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl transition-all duration-300 hover:border-slate-700/80">
                     <h2 className="text-xl font-bold mb-6 text-slate-200 flex items-center gap-2">
