@@ -81,15 +81,15 @@ export default function App() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6 sm:p-12 relative overflow-hidden font-sans">
+        <div className="min-h-screen bg-white text-slate-800 flex flex-col items-center justify-center p-6 sm:p-12 relative overflow-hidden font-sans">
             {/* Background elements using Cebu Landmasters Brand Colors */}
-            <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-emerald-600/10 blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />
+            <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-emerald-500/5 blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-blue-500/5 blur-[120px] pointer-events-none" />
 
             <div className="w-full max-w-2xl z-10 space-y-8">
                 {/* Form Card */}
-                <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl transition-all duration-300 hover:border-slate-700/80">
-                    <h2 className="text-xl font-bold mb-6 text-slate-200 flex items-center gap-2">
+                <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-xl transition-all duration-300 hover:border-slate-300/80">
+                    <h2 className="text-xl font-bold mb-6 text-slate-800 flex items-center gap-2">
                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                         Submit Name Entry
                     </h2>
@@ -98,7 +98,7 @@ export default function App() {
                         {/* Name Fields Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div className="space-y-2">
-                                <label htmlFor="firstName" className="block text-xs font-semibold uppercase tracking-wider text-slate-400">
+                                <label htmlFor="firstName" className="block text-xs font-semibold uppercase tracking-wider text-slate-500">
                                     First Name
                                 </label>
                                 <input
@@ -108,12 +108,12 @@ export default function App() {
                                     value={firstName}
                                     onChange={(e) => setFirstName(e.target.value)}
                                     disabled={isSubmitting}
-                                    className="w-full bg-slate-950/80 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all duration-200"
+                                    className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all duration-200 focus:bg-white"
                                 />
                             </div>
 
                             <div className="space-y-2">
-                                <label htmlFor="lastName" className="block text-xs font-semibold uppercase tracking-wider text-slate-400">
+                                <label htmlFor="lastName" className="block text-xs font-semibold uppercase tracking-wider text-slate-500">
                                     Last Name
                                 </label>
                                 <input
@@ -123,7 +123,7 @@ export default function App() {
                                     value={lastName}
                                     onChange={(e) => setLastName(e.target.value)}
                                     disabled={isSubmitting}
-                                    className="w-full bg-slate-950/80 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all duration-200"
+                                    className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all duration-200 focus:bg-white"
                                 />
                             </div>
                         </div>
@@ -165,16 +165,16 @@ export default function App() {
                 </div>
 
                 {/* Table List Card */}
-                <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl transition-all duration-300">
+                <div className="bg-white border border-slate-200/80 rounded-2xl p-6 sm:p-8 shadow-xl transition-all duration-300">
                     <div className="flex items-center justify-between mb-6">
-                        <h2 className="text-xl font-bold text-slate-200 flex items-center gap-2">
+                        <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
                             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                             Submitted Name Entries
                         </h2>
                         <button
                             onClick={fetchEntries}
                             disabled={isLoading}
-                            className="p-2 text-slate-400 hover:text-emerald-400 transition-colors duration-200"
+                            className="p-2 text-slate-500 hover:text-emerald-600 transition-colors duration-200"
                             title="Refresh List"
                         >
                             <svg className={`h-5 w-5 ${isLoading ? 'animate-spin' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -184,10 +184,10 @@ export default function App() {
                     </div>
 
                     {/* Table View */}
-                    <div className="overflow-hidden border border-slate-800 rounded-xl bg-slate-950/40">
+                    <div className="overflow-hidden border border-slate-200 rounded-xl bg-white">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="border-b border-slate-800 bg-slate-900/40 text-slate-400 text-xs font-bold uppercase tracking-wider">
+                                <tr className="border-b border-slate-200 bg-slate-50 text-slate-500 text-xs font-bold uppercase tracking-wider">
                                     <th className="px-6 py-4">First Name</th>
                                     <th className="px-6 py-4">Last Name</th>
                                     <th className="px-6 py-4 hidden sm:table-cell text-right">Submitted At</th>
@@ -216,11 +216,11 @@ export default function App() {
                                     entries.map((entry) => (
                                         <tr
                                             key={entry.id}
-                                            className="border-b border-slate-900 hover:bg-slate-900/20 transition-colors duration-150 text-slate-300 text-sm"
+                                            className="border-b border-slate-100 hover:bg-slate-50/50 transition-colors duration-150 text-slate-600 text-sm"
                                         >
-                                            <td className="px-6 py-4 font-medium text-slate-200">{entry.first_name}</td>
+                                            <td className="px-6 py-4 font-medium text-slate-800">{entry.first_name}</td>
                                             <td className="px-6 py-4">{entry.last_name}</td>
-                                            <td className="px-6 py-4 hidden sm:table-cell text-right text-slate-500 text-xs">
+                                            <td className="px-6 py-4 hidden sm:table-cell text-right text-slate-400 text-xs">
                                                 {new Date(entry.created_at).toLocaleString(undefined, {
                                                     dateStyle: 'medium',
                                                     timeStyle: 'short',
