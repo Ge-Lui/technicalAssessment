@@ -81,12 +81,15 @@ export default function App() {
     };
 
     return (
-        <div className="min-h-screen bg-[#0D1F14] text-white flex flex-col items-center justify-center p-6 sm:p-12 relative overflow-hidden font-sans">
+        <div className="min-h-screen bg-[#F8FAFC] text-slate-800 flex flex-col items-center justify-center p-6 sm:p-12 relative overflow-hidden font-sans">
+            {/* Top decorative green bar mimicking CLI website header */}
+            <div className="absolute top-0 left-0 right-0 h-2 bg-[#4b8b2e]" />
+
             <div className="w-full max-w-2xl z-10 space-y-8">
                 {/* Form Card */}
-                <div className="bg-[#112A1F] border border-[rgba(34,139,74,0.25)] rounded-2xl p-6 sm:p-8 shadow-2xl transition-all duration-300">
-                    <h2 className="text-xl font-bold mb-6 text-[#FFFFFF] flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#228B4A] animate-pulse" />
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md">
+                    <h2 className="text-xl font-bold mb-6 text-[#4b8b2e] flex items-center gap-2">
+                        <span className="w-2.5 h-2.5 rounded-full bg-[#0069B4] animate-pulse" />
                         Submit Name Entry
                     </h2>
 
@@ -94,55 +97,55 @@ export default function App() {
                         {/* Name Fields Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                             <div className="space-y-2">
-                                <label htmlFor="firstName" className="block text-[11px] font-bold uppercase tracking-wider text-[#7DB89A]">
+                                <label htmlFor="firstName" className="block text-xs font-bold uppercase tracking-wider text-slate-500">
                                     First Name
                                 </label>
                                 <input
                                     id="firstName"
                                     type="text"
-                                    placeholder="e.g. John"
+                                    placeholder="e.g. Angelu"
                                     value={firstName}
                                     onChange={(e) => setFirstName(e.target.value)}
                                     disabled={isSubmitting}
-                                    className="w-full bg-[#0D2318] border border-[#1E5C35] rounded-[9px] px-4 py-3 text-[#FFFFFF] placeholder-[#3D7A55] focus:outline-none focus:ring-2 focus:ring-[#228B4A]/50 focus:border-[#228B4A] transition-all duration-200 text-sm"
+                                    className="w-full bg-[#F8FAFC] border border-slate-200 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0069B4]/20 focus:border-[#0069B4] transition-all duration-200 text-sm focus:bg-white"
                                 />
                             </div>
 
                             <div className="space-y-2">
-                                <label htmlFor="lastName" className="block text-[11px] font-bold uppercase tracking-wider text-[#7DB89A]">
+                                <label htmlFor="lastName" className="block text-xs font-bold uppercase tracking-wider text-slate-500">
                                     Last Name
                                 </label>
                                 <input
                                     id="lastName"
                                     type="text"
-                                    placeholder="e.g. Doe"
+                                    placeholder="e.g. Banogbanog"
                                     value={lastName}
                                     onChange={(e) => setLastName(e.target.value)}
                                     disabled={isSubmitting}
-                                    className="w-full bg-[#0D2318] border border-[#1E5C35] rounded-[9px] px-4 py-3 text-[#FFFFFF] placeholder-[#3D7A55] focus:outline-none focus:ring-2 focus:ring-[#228B4A]/50 focus:border-[#228B4A] transition-all duration-200 text-sm"
+                                    className="w-full bg-[#F8FAFC] border border-slate-200 rounded-lg px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#0069B4]/20 focus:border-[#0069B4] transition-all duration-200 text-sm focus:bg-white"
                                 />
                             </div>
                         </div>
 
                         {/* Error & Success Messages */}
                         {error && (
-                            <div className="bg-rose-500/10 border border-rose-500/30 text-rose-400 rounded-lg px-4 py-3 text-sm flex items-center gap-2 animate-fadeIn">
+                            <div className="bg-rose-500/10 border border-rose-500/20 text-rose-600 rounded-lg px-4 py-3 text-sm flex items-center gap-2 animate-fadeIn">
                                 <span>⚠️</span> {error}
                             </div>
                         )}
 
                         {successMsg && (
-                            <div className="bg-[#228B4A]/10 border border-[#228B4A]/30 text-[#7DB89A] rounded-lg px-4 py-3 text-sm flex items-center gap-2 animate-fadeIn">
+                            <div className="bg-emerald-500/10 border border-emerald-500/20 text-[#4b8b2e] rounded-lg px-4 py-3 text-sm flex items-center gap-2 animate-fadeIn">
                                 <span>✅</span> {successMsg}
                             </div>
                         )}
 
-                        {/* Submit Button */}
+                        {/* Submit Button (Pill shaped, official CLI blue) */}
                         <div className="flex justify-end">
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full sm:w-auto bg-[#228B4A] hover:bg-[#1A6B39] text-[#FFFFFF] font-bold px-6 py-3 rounded-[9px] shadow-lg active:scale-98 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                className="w-full sm:w-auto bg-[#0069B4] hover:bg-[#005594] text-white font-semibold px-8 py-3 rounded-full shadow-sm hover:shadow-md transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 active:scale-98"
                             >
                                 {isSubmitting ? (
                                     <>
@@ -161,16 +164,16 @@ export default function App() {
                 </div>
 
                 {/* Table List Card */}
-                <div className="bg-[#112A1F] border border-[rgba(34,139,74,0.25)] rounded-2xl p-6 sm:p-8 shadow-2xl transition-all duration-300">
+                <div className="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm transition-all duration-300 hover:shadow-md">
                     <div className="flex items-center justify-between mb-6">
-                        <h2 className="text-xl font-bold text-[#FFFFFF] flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 rounded-full bg-[#228B4A]" />
+                        <h2 className="text-xl font-bold text-[#4b8b2e] flex items-center gap-2">
+                            <span className="w-2.5 h-2.5 rounded-full bg-[#0069B4]" />
                             Submitted Name Entries
                         </h2>
                         <button
                             onClick={fetchEntries}
                             disabled={isLoading}
-                            className="p-2 text-[#228B4A] hover:text-[#1A6B39] transition-colors duration-200"
+                            className="p-2 text-slate-400 hover:text-[#0069B4] transition-colors duration-200"
                             title="Refresh List"
                         >
                             <svg className={`h-5 w-5 ${isLoading ? 'animate-spin' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -180,10 +183,10 @@ export default function App() {
                     </div>
 
                     {/* Table View */}
-                    <div className="overflow-hidden border border-[#1E5C35] rounded-xl bg-[#0D2318]">
+                    <div className="overflow-hidden border border-slate-100 rounded-xl bg-white">
                         <table className="w-full text-left border-collapse">
                             <thead>
-                                <tr className="border-b border-[#1E5C35] bg-[#0D2318] text-[#7DB89A] text-[11px] font-bold uppercase tracking-wider">
+                                <tr className="border-b border-slate-100 bg-[#F8FAFC] text-slate-500 text-xs font-bold uppercase tracking-wider">
                                     <th className="px-6 py-4">First Name</th>
                                     <th className="px-6 py-4">Last Name</th>
                                     <th className="px-6 py-4 hidden sm:table-cell text-right">Submitted At</th>
@@ -192,9 +195,9 @@ export default function App() {
                             <tbody>
                                 {isLoading && entries.length === 0 ? (
                                     <tr>
-                                        <td colSpan="3" className="px-6 py-12 text-center text-[#7DB89A]">
+                                        <td colSpan="3" className="px-6 py-12 text-center text-slate-400">
                                             <div className="flex flex-col items-center gap-3">
-                                                <svg className="animate-spin h-8 w-8 text-[#228B4A]" fill="none" viewBox="0 0 24 24">
+                                                <svg className="animate-spin h-8 w-8 text-[#0069B4]" fill="none" viewBox="0 0 24 24">
                                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                                                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                                                 </svg>
@@ -204,7 +207,7 @@ export default function App() {
                                     </tr>
                                 ) : entries.length === 0 ? (
                                     <tr>
-                                        <td colSpan="3" className="px-6 py-12 text-center text-[#7DB89A] text-sm">
+                                        <td colSpan="3" className="px-6 py-12 text-center text-slate-400 text-sm">
                                             No name entries found. Submit a name using the form above!
                                         </td>
                                     </tr>
@@ -212,11 +215,11 @@ export default function App() {
                                     entries.map((entry) => (
                                         <tr
                                             key={entry.id}
-                                            className="border-b border-[#1A3D28] hover:bg-[#153426]/50 bg-[#112A1F] transition-colors duration-150 text-sm"
+                                            className="border-b border-slate-100 hover:bg-slate-50 transition-colors duration-150 text-sm text-slate-600"
                                         >
-                                            <td className="px-6 py-4 font-bold text-[#FFFFFF]">{entry.first_name}</td>
-                                            <td className="px-6 py-4 text-[#C8E6D4]">{entry.last_name}</td>
-                                            <td className="px-6 py-4 hidden sm:table-cell text-right text-[#7DB89A] text-xs">
+                                            <td className="px-6 py-4 font-semibold text-slate-800">{entry.first_name}</td>
+                                            <td className="px-6 py-4">{entry.last_name}</td>
+                                            <td className="px-6 py-4 hidden sm:table-cell text-right text-slate-400 text-xs">
                                                 {new Date(entry.created_at).toLocaleString(undefined, {
                                                     dateStyle: 'medium',
                                                     timeStyle: 'short',
