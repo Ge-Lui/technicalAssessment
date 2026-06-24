@@ -82,14 +82,14 @@ export default function App() {
 
     return (
         <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center p-6 sm:p-12 relative overflow-hidden font-sans">
-            {/* Background elements */}
-            <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-violet-600/10 blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-teal-600/10 blur-[120px] pointer-events-none" />
+            {/* Background elements using Cebu Landmasters Brand Colors */}
+            <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full bg-emerald-600/10 blur-[120px] pointer-events-none" />
+            <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[120px] pointer-events-none" />
 
             <div className="w-full max-w-2xl z-10 space-y-8">
                 {/* Header */}
                 <div className="text-center space-y-2">
-                    <h1 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-violet-400 via-fuchsia-400 to-teal-400 bg-clip-text text-transparent">
+                    <h1 className="text-4xl font-extrabold tracking-tight bg-gradient-to-r from-emerald-400 via-teal-400 to-blue-400 bg-clip-text text-transparent">
                         Technical Assessment
                     </h1>
                     <p className="text-slate-400 text-sm sm:text-base font-medium">
@@ -100,7 +100,7 @@ export default function App() {
                 {/* Form Card */}
                 <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl transition-all duration-300 hover:border-slate-700/80">
                     <h2 className="text-xl font-bold mb-6 text-slate-200 flex items-center gap-2">
-                        <span className="w-2.5 h-2.5 rounded-full bg-violet-500 animate-pulse" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                         Submit Name Entry
                     </h2>
 
@@ -118,7 +118,7 @@ export default function App() {
                                     value={firstName}
                                     onChange={(e) => setFirstName(e.target.value)}
                                     disabled={isSubmitting}
-                                    className="w-full bg-slate-950/80 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-all duration-200"
+                                    className="w-full bg-slate-950/80 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all duration-200"
                                 />
                             </div>
 
@@ -133,7 +133,7 @@ export default function App() {
                                     value={lastName}
                                     onChange={(e) => setLastName(e.target.value)}
                                     disabled={isSubmitting}
-                                    className="w-full bg-slate-950/80 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500 transition-all duration-200"
+                                    className="w-full bg-slate-950/80 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 transition-all duration-200"
                                 />
                             </div>
                         </div>
@@ -156,7 +156,7 @@ export default function App() {
                             <button
                                 type="submit"
                                 disabled={isSubmitting}
-                                className="w-full sm:w-auto bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-violet-500/20 active:scale-98 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                className="w-full sm:w-auto bg-gradient-to-r from-emerald-600 to-blue-600 hover:from-emerald-500 hover:to-blue-500 text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-emerald-500/20 active:scale-98 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
                                 {isSubmitting ? (
                                     <>
@@ -178,13 +178,13 @@ export default function App() {
                 <div className="bg-slate-900/60 backdrop-blur-xl border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl transition-all duration-300">
                     <div className="flex items-center justify-between mb-6">
                         <h2 className="text-xl font-bold text-slate-200 flex items-center gap-2">
-                            <span className="w-2.5 h-2.5 rounded-full bg-teal-500" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                             Submitted Name Entries
                         </h2>
                         <button
                             onClick={fetchEntries}
                             disabled={isLoading}
-                            className="p-2 text-slate-400 hover:text-teal-400 transition-colors duration-200"
+                            className="p-2 text-slate-400 hover:text-emerald-400 transition-colors duration-200"
                             title="Refresh List"
                         >
                             <svg className={`h-5 w-5 ${isLoading ? 'animate-spin' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -208,7 +208,7 @@ export default function App() {
                                     <tr>
                                         <td colSpan="3" className="px-6 py-12 text-center text-slate-500">
                                             <div className="flex flex-col items-center gap-3">
-                                                <svg className="animate-spin h-8 w-8 text-teal-500" fill="none" viewBox="0 0 24 24">
+                                                <svg className="animate-spin h-8 w-8 text-emerald-500" fill="none" viewBox="0 0 24 24">
                                                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                                                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                                                 </svg>
