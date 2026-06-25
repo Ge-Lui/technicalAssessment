@@ -2,23 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NameEntry;
+use App\Models\Name;
 use Illuminate\Http\Request;
 
-class NameEntryController extends Controller
+class NameController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $entries = NameEntry::orderBy('created_at', 'desc')->get();
+        $entries = Name::orderBy('created_at', 'desc')->get();
         return response()->json($entries);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -26,14 +20,11 @@ class NameEntryController extends Controller
             'last_name' => 'required|string|max:255',
         ]);
 
-        $entry = NameEntry::create($validated);
+        $name = Name::create($validated);
 
-        return response()->json($entry, 211);
+        return response()->json($name, 201);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
@@ -41,19 +32,16 @@ class NameEntryController extends Controller
             'last_name' => 'required|string|max:255',
         ]);
 
-        $entry = NameEntry::findOrFail($id);
-        $entry->update($validated);
+        $name = Name::findOrFail($id);
+        $name->update($validated);
 
-        return response()->json($entry);
+        return response()->json($name);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
-        $entry = NameEntry::findOrFail($id);
-        $entry->delete();
+        $name = Name::findOrFail($id);
+        $name->delete();
 
         return response()->json(['success' => true]);
     }
