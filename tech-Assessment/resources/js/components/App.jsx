@@ -139,16 +139,16 @@ export default function App() {
     };
 
     return (
-        <div className="min-h-screen bg-[#EBF2EE] text-slate-800 flex flex-col items-center justify-center p-6 sm:p-12 relative overflow-hidden font-sans">
+        <div className="min-h-screen bg-[#EBF2EE] text-slate-800 flex flex-col items-center sm:justify-center pt-32 pb-12 px-6 sm:p-12 relative overflow-hidden font-sans">
             {/* Top decorative green bar mimicking CLI website header */}
             <div className="absolute top-0 left-0 right-0 h-2 bg-[#4b8b2e]" />
 
-            {/* Top Left Logo */}
-            <div className="absolute top-8 left-8 sm:top-10 sm:left-12 z-20">
+            {/* Top Left Logo (Centered on Mobile, Top-Left on Desktop) */}
+            <div className="absolute top-6 left-0 right-0 sm:right-auto sm:left-12 sm:top-10 z-20 flex justify-center sm:justify-start pointer-events-none">
                 <img 
                     src="/clm.png" 
                     alt="Logo" 
-                    className="h-14 sm:h-18 w-auto object-contain"
+                    className="h-28 sm:h-18 w-auto object-contain pointer-events-auto"
                 />
             </div>
 
