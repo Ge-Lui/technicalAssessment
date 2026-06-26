@@ -11,4 +11,5 @@ Route::get('/api/names', [NameController::class, 'index']);
 Route::post('/api/names', [NameController::class, 'store']);
 Route::put('/api/names/{id}', [NameController::class, 'update']);
 Route::delete('/api/names/{id}', [NameController::class, 'destroy']);
+Route::post('/api/names/bulk-delete', [NameController::class, 'bulkDestroy']);
 

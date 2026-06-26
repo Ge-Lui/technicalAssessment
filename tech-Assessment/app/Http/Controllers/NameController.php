@@ -68,4 +68,16 @@ class NameController extends Controller
 
         return response()->json(['success' => true]);
     }
+
+    public function bulkDestroy(Request $request)
+    {
+        $request->validate([
+            'ids' => 'required|array',
+            'ids.*' => 'integer|exists:name_entries,id'
+        ]);
+
+        Name::destroy($request->ids);
+
+        return response()->json(['success' => true]);
+    }
 }
