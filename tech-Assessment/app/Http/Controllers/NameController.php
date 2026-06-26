@@ -20,6 +20,17 @@ class NameController extends Controller
             'last_name' => 'required|string|max:255',
         ]);
 
+        // Check for duplicate entry (case-insensitive)
+        $exists = Name::whereRaw('LOWER(first_name) = ?', [strtolower($request->first_name)])
+                      ->whereRaw('LOWER(last_name) = ?', [strtolower($request->last_name)])
+                      ->exists();
+
+        if ($exists) {
+            return response()->json([
+                'message' => 'This name entry already exists in the records.'
+            ], 422);
+        }
+
         $name = Name::create($validated);
 
         return response()->json($name, 201);
@@ -31,6 +42,18 @@ class NameController extends Controller
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
         ]);
+
+        // Check for duplicate entry on other records (case-insensitive)
+        $exists = Name::where('id', '!=', $id)
+                      ->whereRaw('LOWER(first_name) = ?', [strtolower($request->first_name)])
+                      ->whereRaw('LOWER(last_name) = ?', [strtolower($request->last_name)])
+                      ->exists();
+
+        if ($exists) {
+            return response()->json([
+                'message' => 'This name entry already exists in the records.'
+            ], 422);
+        }
 
         $name = Name::findOrFail($id);
         $name->update($validated);

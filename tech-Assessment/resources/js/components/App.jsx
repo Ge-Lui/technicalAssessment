@@ -238,12 +238,7 @@ export default function App() {
                             </div>
                         </div>
 
-                        {/* Error Message */}
-                        {error && (
-                            <div className="bg-rose-500/10 border border-rose-500/20 text-rose-600 rounded-lg px-4 py-3 text-sm flex items-center gap-2 animate-fadeIn">
-                                <span>⚠️</span> {error}
-                            </div>
-                        )}
+
 
                         {/* Submit & Cancel Buttons */}
                         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
@@ -428,6 +423,27 @@ export default function App() {
                             className="w-full py-2.5 rounded-full bg-[#0069B4] hover:bg-[#005594] text-white font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
                         >
                             Continue
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            {/* Custom Error Modal */}
+            {error && (
+                <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                    <div className="bg-white rounded-2xl max-w-sm w-full p-6 shadow-xl border border-slate-100 flex flex-col items-center text-center transform scale-100 transition-all duration-300 animate-in fade-in zoom-in-95 duration-200">
+                        <div className="w-16 h-16 bg-rose-500/10 rounded-full flex items-center justify-center text-rose-600 text-3xl mb-4 animate-bounce">
+                            ⚠️
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-800 mb-2">Notice</h3>
+                        <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+                            {error}
+                        </p>
+                        <button
+                            onClick={() => setError(null)}
+                            className="w-full py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+                        >
+                            Dismiss
                         </button>
                     </div>
                 </div>
